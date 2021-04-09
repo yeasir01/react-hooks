@@ -1,2 +1,2 @@
-# react-hooks
-A curated group of reusable react hooks.
+# React-Hooks
+A curated group of reusable react hooks built to minmize code depulication.
