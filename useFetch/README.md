@@ -55,7 +55,7 @@ function App() {
     setPosts({...posts, [name]: value})
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
 
     const opt = {
