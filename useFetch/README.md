@@ -50,7 +50,7 @@ function App() {
   const [posts, setPosts] = useState(initialState);
   const [response, error, isLoading, request] = useFetch();
 
-  const handleChange = (event) => {
+  const handleChange = event => {
     let {name, value} = event.target;
     setPosts({...posts, [name]: value})
   }
