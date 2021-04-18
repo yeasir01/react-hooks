@@ -50,23 +50,14 @@ function App() {
   const [posts, setPosts] = useState(initialState);
   const [response, error, isLoading, request] = useFetch();
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     let {name, value} = event.target;
     setPosts({...posts, [name]: value})
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-
-    const opt = {
-      method: "POST",
-      body: JSON.stringify(posts),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      }
-    }
-
-    request("https://jsonplaceholder.typicode.com/posts", opt);
+    request.post("https://jsonplaceholder.typicode.com/posts", posts);
   }
   
   return (

@@ -1,19 +1,68 @@
 import { useEffect, useState } from 'react';
 
-function useFetch(initURL = "", initOPT = {}) {
+function useFetch(initialUrl = "", initialOptions = {}) {
     const [response, setResponse] = useState([]);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
-    const [url, setUrl] = useState(initURL);
-    const [options, setOptions] = useState(initOPT);
-    
-    const request = (newURL = "", newOpt = {}) => {
-        setUrl(newURL)
-        setOptions(newOpt)
-    };
+    const [url, setUrl] = useState(initialUrl);
+    const [options, setOptions] = useState(initialOptions);
+
+    const request = {
+        get: (url = "", config = {}) => {
+            setUrl(url)
+            setOptions(config)
+        },
+        post: (url = "", data = [], config = {}) => {
+            const defaults = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                },   
+                body: JSON.stringify(data)
+            }
+
+            const opt = {
+                ...defaults,
+                ...config
+            }
+
+            setUrl(url)
+            setOptions(opt)
+        },
+        put: (url = "", data = [], config = {}) => {
+            const defaults = {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json; charset=UTF-8",
+                },   
+                body: JSON.stringify(data)
+            }
+
+            const opt = {
+                ...defaults,
+                ...config
+            }
+
+            setUrl(url)
+            setOptions(opt)
+        },
+        delete: (url = "", config = {}) => {
+            const defaults = {
+                method: "DELETE",
+            }
+
+            const opt = {
+                ...defaults,
+                ...config
+            }
+
+            setUrl(url)
+            setOptions(opt)
+        }
+    }
 
     useEffect(() => {
-        if (url === "" || url === null) return;
+        if (!url) return;
 
         const controller = new AbortController();
         const signal = controller.signal;
