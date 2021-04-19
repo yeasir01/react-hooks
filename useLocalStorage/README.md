@@ -2,7 +2,7 @@
 
 ## WITH FORM
 ```
-import useLocalStorage from "./Hooks/useLocalStorage";
+import useLocalStorage from "./Hooks/useLocalStorage.js";
 
 const initialState = {
   title: "",
