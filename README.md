@@ -1,7 +1,7 @@
 ![React Hooks Img](./screenshot/hooks.png)
 
 # React-Hooks
-A group of reusable react hooks I built to minimize my code duplication.
+A group of reusable react hooks I built to minimize code duplication.
 
 ## Objective of project
 * develop my react skills
