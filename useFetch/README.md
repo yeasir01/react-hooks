@@ -1,6 +1,6 @@
 # Useage
 
-## GET
+### GET
 ```
 import useFetch from "./Hooks/useFetch.js";
 
@@ -35,7 +35,7 @@ export default App;
 ```
 
 
-## POST
+### POST
 ```
 import {useState} from "react";
 import useFetch from "./Hooks/useFetch.js";
