@@ -18,6 +18,8 @@ function useLocalStorage(key = "", initialValue) {
     };
 
     useEffect(() => {
+        if (!state) return;
+        
         const value = JSON.stringify(state);
         window.localStorage.setItem(key, value);
     },[key, state]);
