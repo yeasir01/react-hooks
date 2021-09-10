@@ -7,7 +7,6 @@ A group of custom reusable hooks built to minimize code duplication.
 https://reactjs.org/docs/hooks-custom.html
 
 ## Objective of project
-* develop my react skills
-* Reuse stateful logic
-* Write clean code by separating visual components from business logic
-* share code with dev community
+* Develop my react skills.
+* Write clean code by separating visual components from business logic.
+* Share code with dev community.
