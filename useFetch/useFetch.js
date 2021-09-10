@@ -68,9 +68,8 @@ function useFetch(initialUrl = "", initialOptions = {}) {
         const signal = controller.signal;
         
         const handleFetch = async () => {
-            options.signal = signal;
-            
             try {
+                options.signal = signal;
                 setIsLoading(true);
                 const res = await fetch(url, options);
                 const json = await res.json();
